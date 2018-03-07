@@ -7,10 +7,11 @@ Welcome to Central Services's documentation!
 ============================================
 
 .. toctree::
+   :glob:
    :maxdepth: 2
    :caption: Contents:
 
-
+   conceptual/*
 
 Indices and tables
 ==================
