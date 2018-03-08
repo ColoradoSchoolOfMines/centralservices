@@ -12,6 +12,7 @@ Welcome to Central Services's documentation!
    :caption: Contents:
 
    conceptual/*
+   api-specification.rst
 
 Indices and tables
 ==================
