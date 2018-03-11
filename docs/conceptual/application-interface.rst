@@ -2,9 +2,9 @@ Application Interface
 =====================
 
 Applications may wish to utilize data stored in Central Services. Such
-applications can do so using the Central Services API.
+applications can do so using the Central Services Application API.
 
-The API has three tiers:
+The Application API has three tiers:
 
 1. **Public:** provides access to all public information. This should be
    sufficient for most applications.
@@ -13,41 +13,55 @@ The API has three tiers:
    applications which may need private user data.
 3. **Trusted:** provides access to all public and private information without
    needing express per-user permission grants. This should be used to create
-   Central Services portals such as the Central Services User Portal.
+   portals to Central Services such as the Central Services User Portal.
 
 Both the Privileged and Trusted tier require the application developer to
-request an application API key.
+request an Application API key.
 
-Requesting an API Key
----------------------
+Requesting an Application API Key
+---------------------------------
 
 To create an application that uses the Privileged or Trusted tiers, the
-application developer must request an application API key. API key requests are
-approved or disapproved by the administrator of Central Services (see `Security
-Model`_ for more details on how this process will work). The application
-developer can request their API key to be either Privileged or Trusted.
+application developer must request an Application API key. Application API key
+requests are approved or disapproved by the administrator of Central Services
+(see `Security Model`_ for more details on how this process will work). The
+application developer can request their Application API key to be either
+Privileged or Trusted.
 
-Application API keys can be revoked at any time, for any reason, by the Central
-Services administrator. Application API keys can also be changed from Privileged
-to Trusted, and vice versa.
+Application API keys can be revoked at any time, and for any reason, by the
+Central Services administrator. Application API keys can also be converted from
+Privileged to Trusted, and vice versa.
 
-Accessing the API
------------------
+Accessing the Application API
+-----------------------------
 
-The Central Services API is a REST API. It is accessible via the central
-services API endpoint at `https://central.mines.edu/api`. The API is documented
-`here`_.
+The Central Services Application API is a REST API. It is accessible via the
+Central Services Application API HTTPS endpoint. The Application API is
+documented `here`_.
 
-Privileged and Trusted tier endpoints have a required `api_key` query parameter.
-The Public tier endpoints can be accessed without such a key.
+Privileged and Trusted tier Application API calls have a required `api_key`
+query parameter.  The Public tier endpoints can be accessed without such a key
+(if a key is provided, it will be ignored).
 
-.. _here: ../api-specification.html
+.. _here: ../applicaton-api-specification.html
+
+Requesting User Data as a Privileged Tier Application
+-----------------------------------------------------
+
+When an application wants to request information about a user, they will
+redirect the user to the Central Services Application Authorization page passing
+some metadata about what information the application wants to access.
 
 Security Model
 --------------
 
-Central Services will manage whether or not an given application API key is
-Privileged or Trusted.
+Central Services will manage whether or not an given Application API key is
+Privileged or Trusted. Central Services will also keep track of which Privileged
+applications have access to which users' data.
+
+Users will be able to control the data that each application can access. Note,
+however, that once a user grants access to personal information to a certain
+application, then the application can store it internally.
 
 .. TODO: What is an Application
 
