@@ -1,15 +1,22 @@
 Application Interface
 =====================
 
-Applications may wish to utilize data stored in Central Services. Such
-applications can do so using the Central Services Application API.
+Central Services provides an API for application developers to utilize data
+stored in Central Services. This API is called the **Central Services
+Application API**.
+
+Some examples of applications which might want to access data in Central
+Services are:
+
+- **Club Websites:** a club might want to use Central Services to get
+  information about the users of the club website.
 
 The Application API has three tiers:
 
 1. **Public:** provides access to all public information. This should be
    sufficient for most applications.
-2. **Privileged:** provides the ability to access access to private information
-   with express, granular permission of the user. This should be sufficient for
+2. **Privileged:** provides the ability to access private information with
+   express, granular permission of the user. This should be sufficient for
    applications which may need private user data.
 3. **Trusted:** provides access to all public and private information without
    needing express per-user permission grants. This should be used to create
