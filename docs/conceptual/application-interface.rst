@@ -10,6 +10,8 @@ Services are:
 
 - **Club Websites:** a club might want to use Central Services to get
   information about the users of the club website.
+- **Central Services User Portal:** this application will allow users to manage
+  the data that is stored about them in Central Services.
 
 The Application API has three tiers:
 
